@@ -12,6 +12,10 @@
   "ps1_username": "guest",
   "repo": "https://github.com/redyf/portfolio",
   "resume_url": "https://drive.google.com/file/d/15G8smIEXEQflBpd85QB8XrEpPrQqyqKW/view?usp=sharing",
+  "donate_urls": {
+    "paypal": "https://paypal.me/redyf",
+    "patreon": "https://patreon.com/redyf"
+  },
   "colors": {
     "light": {
       "background": "#eff1f5",
