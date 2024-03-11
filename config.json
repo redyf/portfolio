@@ -1,39 +1,48 @@
 {
-  "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "LiveTerm",
-  "name": "John Doe",
-  "ascii": "liveterm",
+  "readmeUrl": "https://raw.githubusercontent.com/redyf/redyf/master/README.md",
+  "title": "Redyf's Home",
+  "name": "Mateus Alves",
+  "ascii": "redyf",
   "social": {
-    "github": "github",
-    "linkedin": "linkedin"
+    "github": "redyf",
+    "linkedin": "mateusper"
   },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
-  "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
-  "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
-  "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
-  },
+  "email": "mateusalvespereira7@gmail.com",
+  "ps1_hostname": "localhost",
+  "ps1_username": "guest",
+  "repo": "https://github.com/redyf/portfolio",
+  "resume_url": "https://drive.google.com/file/d/15G8smIEXEQflBpd85QB8XrEpPrQqyqKW/view?usp=sharing",
   "colors": {
     "light": {
-      "background": "#FBF1C9",
-      "foreground": "#3C3836",
-      "yellow": "#D79921",
-      "green": "#98971A",
+      "background": "#eff1f5",
+      "foreground": "#4c4f69",
+      "yellow": "#df8e1d",
+      "green": "#40a02b",
       "gray": "#7C6F64",
-      "blue": "#458588",
-      "red": "#CA2124"
+      "blue": "#1e66f5",
+      "red": "#d20f39"
     },
     "dark": {
-      "background": "#2E3440",
-      "foreground": "#E5E9F0",
-      "yellow": "#5E81AC",
-      "green": "#A3BE8C",
+      "background": "#1e1e2e",
+      "foreground": "#cdd6f4",
+      "yellow": "#f9e2af",
+      "green": "#a6e3a1",
       "gray": "#88C0D0",
-      "blue": "#EBCB8B",
-      "red": "#BF616A"
+      "blue": "#89b4fa",
+      "red": "#f38ba8"
     }
-  }
+  },
+  "banner": [
+    "    ██▀███  ▓█████ ▓█████▄▓██   ██▓  █████▒ ",
+    "   ▓██ ▒ ██▒▓█   ▀ ▒██▀ ██▌▒██  ██▒▓██   ▒  ",
+    "   ▓██ ░▄█ ▒▒███   ░██   █▌ ▒██ ██░▒████ ░  ",
+    "   ▒██▀▀█▄  ▒▓█  ▄ ░▓█▄   ▌ ░ ▐██▓░░▓█▒  ░  ",
+    "   ░██▓ ▒██▒░▒████▒░▒████▓  ░ ██▒▓░░▒█░     ",
+    "   ░ ▒▓ ░▒▓░░░ ▒░ ░ ▒▒▓  ▒   ██▒▒▒  ▒ ░     ",
+    "     ░▒ ░ ▒░ ░ ░  ░ ░ ▒  ▒ ▓██ ░▒░  ░       ",
+    "     ░░   ░    ░    ░ ░  ░ ▒ ▒ ░░   ░ ░     ",
+    "      ░        ░  ░   ░    ░ ░              ",
+    "                                            ",
+    "              git@github.com:redyf          "
+  ]
 }
