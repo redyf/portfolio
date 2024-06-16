@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   HoverCard,
@@ -5,6 +6,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import Link from "next/link";
+import { playSound, typingSound } from "./Navbar";
 
 const Personal = () => {
   return (
@@ -14,33 +16,41 @@ const Personal = () => {
           Mateus Alves
         </h1>
         <h2 className="text-white opacity-60 text-center mb-4">
-          Student & software developer
+          Student & Software Developer
         </h2>
         <p className="text-white text-center mb-6">
           I'm Mateus Alves, a Brazilian student passionate about open source and
           solving problems with code.
         </p>
         <div className="text-white opacity-60 text-center mb-6">
-          <HoverCard>
-            <Link href="/projects" className="underline">
+          <Link
+            href="/projects"
+            className="underline"
+            onClick={() => playSound(typingSound)}
+          >
+            <HoverCard>
               <HoverCardTrigger className="cursor-pointer underline">
                 My Projects
               </HoverCardTrigger>
-            </Link>
-            <HoverCardContent>
-              Here are my projects, feel free to contribute!
-            </HoverCardContent>
-          </HoverCard>
-          <HoverCard>
-            <Link href="/about" className="underline">
+              <HoverCardContent>
+                Here are my projects, feel free to contribute!
+              </HoverCardContent>
+            </HoverCard>
+          </Link>
+          <Link
+            href="/about"
+            className="underline"
+            onClick={() => playSound(typingSound)}
+          >
+            <HoverCard>
               <HoverCardTrigger className="cursor-pointer underline ml-4">
                 About me
               </HoverCardTrigger>
-            </Link>
-            <HoverCardContent>
-              Here's a little bit about me, my journey and my goals...
-            </HoverCardContent>
-          </HoverCard>
+              <HoverCardContent>
+                Here's a little bit about me, my journey and my goals...
+              </HoverCardContent>
+            </HoverCard>
+          </Link>
         </div>
       </div>
     </div>
