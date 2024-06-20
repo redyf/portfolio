@@ -19,38 +19,34 @@ const Personal = () => {
           Student & Software Developer
         </h2>
         <p className="text-white text-center mb-6">
-          I'm Mateus Alves, a Brazilian student passionate about open source and
-          solving problems with code.
+          I&apos;m Mateus Alves, a Brazilian student passionate about open
+          source and solving problems with code.
         </p>
         <div className="text-white opacity-60 text-center mb-6">
-          <Link
-            href="/projects"
-            className="underline"
-            onClick={() => playSound(typingSound)}
-          >
-            <HoverCard>
-              <HoverCardTrigger className="cursor-pointer underline">
-                My Projects
-              </HoverCardTrigger>
-              <HoverCardContent>
-                Here are my projects, feel free to contribute!
-              </HoverCardContent>
-            </HoverCard>
-          </Link>
-          <Link
-            href="/about"
-            className="underline"
-            onClick={() => playSound(typingSound)}
-          >
-            <HoverCard>
-              <HoverCardTrigger className="cursor-pointer underline ml-4">
-                About me
-              </HoverCardTrigger>
-              <HoverCardContent>
-                Here's a little bit about me, my journey and my goals...
-              </HoverCardContent>
-            </HoverCard>
-          </Link>
+          <HoverCard>
+            <HoverCardTrigger>
+              <span className="cursor-pointer underline">
+                <Link href="/projects" onClick={() => playSound(typingSound)}>
+                  My Projects
+                </Link>
+              </span>
+            </HoverCardTrigger>
+            <HoverCardContent>
+              Here are my projects, feel free to contribute!
+            </HoverCardContent>
+          </HoverCard>
+          <HoverCard>
+            <HoverCardTrigger>
+              <span className="cursor-pointer underline ml-4">
+                <Link href="/about" onClick={() => playSound(typingSound)}>
+                  About Me
+                </Link>
+              </span>
+            </HoverCardTrigger>
+            <HoverCardContent>
+              Here&apos;s a little bit about me, my journey and my goals...
+            </HoverCardContent>
+          </HoverCard>
         </div>
       </div>
     </div>
