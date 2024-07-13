@@ -82,3 +82,7 @@ html {
   font-size: 15px;
 }
 
+body {
+  background-color: black;
+  color: white;
+}
