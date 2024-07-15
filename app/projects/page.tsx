@@ -46,19 +46,23 @@ const ProjectsPage = () => {
   }
 
   return (
-    <div className="text-center">
-      <h1 className="text-2xl font-bold mb-4 text-white">Projects</h1>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {repositories.map((repo) => (
-          <RepoCard
-            key={repo.id}
-            url={repo.url}
-            name={repo.name}
-            description={repo.description}
-            stars={repo.stars}
-          />
-        ))}
-      </ul>
+    <div className="w-full h-80 bg-black flex items-start justify-center pt-16">
+      <div className="container max-w-2xl mx-auto px-4">
+        <h1 className="text-2xl font-bold mb-4 text-white text-center">
+          Projects
+        </h1>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-center">
+          {repositories.map((repo) => (
+            <RepoCard
+              key={repo.id}
+              url={repo.url}
+              name={repo.name}
+              description={repo.description}
+              stars={repo.stars}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
