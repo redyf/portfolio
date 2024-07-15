@@ -11,12 +11,12 @@ const AboutPage = () => {
           </header>
           <main>
             <p className="mb-6">
-              I'm a Computer Science student at Unijorge University, driven by a
+              Computer Science student at Unijorge University, driven by a
               passion for open-source. I find joy in collaborative coding and
               building community. Beyond the keyboard, music is my solace.
             </p>
             <p className="mb-6">
-              When I'm not coding or listening to music, you might find me
+              When I&apos;m not coding or listening to music, you might find me
               playing table tennis or trying to convince people to switch to
               Linux.
             </p>
@@ -29,8 +29,9 @@ const AboutPage = () => {
           </main>
           <footer>
             <p>
-              Feel free to reach out if you're interested in collaborating on a
-              project, discussing tech, or just saying hello. You can find me on{" "}
+              Feel free to reach out if you&apos;re interested in collaborating
+              on a project, discussing tech, or just saying hello. You can find
+              me on{" "}
               <a
                 href="https://www.linkedin.com/in/mateusper"
                 className="text-blue-500"
