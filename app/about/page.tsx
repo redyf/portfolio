@@ -39,13 +39,13 @@ const AboutPage = () => {
               >
                 LinkedIn
               </a>{" "}
-              or drop me an email at{" "}
+              or drop me an email{" "}
               <a
                 href="mailto:mateusalvespereira7@gmail.com"
                 className="text-blue-500"
                 aria-label="Email"
               >
-                mateusalvespereira7@gmail.com
+                here
               </a>
               .
             </p>
