@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import Icon from "@mdi/react";
 import { mdiEmail, mdiMenu } from "@mdi/js";
 export const avatar = "/images/avatar.png";
+export const avatarNew = "/images/avatarnew.jpg";
 export const switchPageSound = "/sounds/switch-page.mp3";
 export const typingSound = "/sounds/type.wav";
 
@@ -28,7 +29,7 @@ const Navbar = () => {
             onClick={() => playSound(switchPageSound)}
           >
             <Avatar>
-              <AvatarImage src={avatar} alt="Avatar" />
+              <AvatarImage src={avatarNew} alt="Avatar" />
               <AvatarFallback>BR</AvatarFallback>
             </Avatar>
           </Link>
