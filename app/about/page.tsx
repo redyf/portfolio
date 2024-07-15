@@ -32,21 +32,21 @@ const AboutPage = () => {
               Feel free to reach out if you&apos;re interested in collaborating
               on a project, discussing tech, or just saying hello. You can find
               me on{" "}
-              <a
+              <Link
                 href="https://www.linkedin.com/in/mateusper"
                 className="text-blue-500"
                 aria-label="LinkedIn"
               >
                 LinkedIn
-              </a>{" "}
+              </Link>{" "}
               or drop me an email{" "}
-              <a
+              <Link
                 href="mailto:mateusalvespereira7@gmail.com"
                 className="text-blue-500"
                 aria-label="Email"
               >
                 here
-              </a>
+              </Link>
               .
             </p>
           </footer>
