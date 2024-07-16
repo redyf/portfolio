@@ -18,7 +18,7 @@ const AboutPage = () => {
             <p className="mb-6">
               When I&apos;m not coding or listening to music, you might find me
               playing table tennis or trying to convince people to switch to
-              Linux.
+              Linux...
             </p>
             <div className="mb-6">
               View My{" "}
