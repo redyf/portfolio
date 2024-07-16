@@ -10,8 +10,6 @@ export const avatarNew = "/images/avatarnew.jpg";
 export const switchPageSound = "/sounds/switch-page.mp3";
 export const typingSound = "/sounds/type.wav";
 
-// TODO: Add a dashboard when the user clicks on the avatar, there will be a github link inside of it too
-
 export const playSound = (sound: string) => {
   const audio = new Audio(sound);
   audio.play();
@@ -64,17 +62,6 @@ const Navbar = () => {
                   onClick={() => playSound(switchPageSound)}
                 >
                   Projects
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog">
-                <Button
-                  variant={"outline"}
-                  className="bg-black border-black"
-                  onClick={() => playSound(switchPageSound)}
-                >
-                  Blog
                 </Button>
               </Link>
             </li>
@@ -144,20 +131,6 @@ const Navbar = () => {
                   }}
                 >
                   Projects
-                </Button>
-              </Link>
-            </li>
-            <li className="py-2">
-              <Link href="/blog">
-                <Button
-                  variant={"outline"}
-                  className="bg-black border-black w-full"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    playSound(typingSound);
-                  }}
-                >
-                  Blog
                 </Button>
               </Link>
             </li>
