@@ -1,11 +1,12 @@
+// app/page.tsx
 import Personal from "@/components/ui/Personal";
-import Blogs from "@/components/ui/Blogs";
+import RenderBlog from "@/components/ui/RenderBlogPost";
 
 export default function Home() {
   return (
     <>
       <Personal />
-      <Blogs />
+      <RenderBlog />
     </>
   );
 }
