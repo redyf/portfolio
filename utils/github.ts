@@ -14,7 +14,7 @@ export async function fetchGithubRepositories(token: string) {
             Authorization: `token ${token}`,
           },
           params: {
-            per_page: 50,
+            per_page: 25,
             page: page,
           },
         },
