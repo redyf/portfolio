@@ -1,6 +1,11 @@
+"use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allPosts } from "contentlayer/generated";
+import { MDXRemote } from "next-mdx-remote";
+import { MDXProvider } from "@mdx-js/react";
+import { getPostData, PostData } from "@/utils/getPostData";
+import { mdxComponents } from "@/mdx-components";
 
 type Props = {
   params: {
@@ -8,51 +13,67 @@ type Props = {
   };
 };
 
-// generate static paths for blog posts and renders a single blog post based on the URL slug
-export async function generateStaticParams(): Promise<Props["params"][]> {
-  return allPosts.map(({ url }) => ({
-    slug: url.split("/").slice(1), // remove posts from the start of the url
-  }));
-}
-
 export default function Page({ params }: Props) {
-  const post = allPosts.find(
-    (post) => post.url === `/posts/${params.slug.join("/")}`,
-  );
+  const [post, setPost] = useState<PostData | null>(null);
+
+  useEffect(() => {
+    getPostData(params.slug)
+      .then(setPost)
+      .catch(() => notFound());
+  }, [params.slug]);
 
   if (!post) {
-    notFound();
+    return <div>Loading...</div>;
   }
 
   return (
-    <article className="mx-auto max-w-3xl py-8 px-4">
-      <header className="mb-8">
-        <Link
-          href="/"
-          className="text-center font-semibold text-indigo-500 hover:text-indigo-700"
-        >
-          Home
-        </Link>
-        <h1 className="mt-4 text-4xl font-extrabold text-white">
-          {post.title}
-        </h1>
-        <time
-          dateTime={post.publishedDate}
-          className="block mt-2 text-sm text-gray-600"
-        >
-          Published on{" "}
-          {new Date(post.publishedDate).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </time>
-      </header>
-
-      <div
-        className="prose prose-lg max-w-none"
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
-      ></div>
-    </article>
+    <MDXProvider components={mdxComponents}>
+      <div className="bg-black min-h-screen py-10">
+        <article className="mx-auto max-w-3xl bg-white shadow-lg rounded-lg p-6 text-black">
+          <header className="mb-6">
+            <Link
+              href="/"
+              className="text-indigo-500 hover:text-indigo-700 font-medium"
+            >
+              &larr; Back to Home
+            </Link>
+            <h1 className="mt-4 text-4xl font-extrabold text-gray-900">
+              {post.title}
+            </h1>
+            <time
+              dateTime={post.publishedDate}
+              className="block mt-2 text-sm text-gray-600"
+            >
+              Published on{" "}
+              {new Date(post.publishedDate).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
+            {post.tags && post.tags.length > 0 && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-2.5 py-0.5 rounded"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </header>
+          <div className="prose prose-lg max-w-none">
+            <MDXRemote {...post.mdxSource} />
+          </div>
+          <footer className="mt-8 border-t pt-4">
+            <p className="text-sm text-gray-600">
+              © {new Date().getFullYear()} My Blog. All rights reserved.
+            </p>
+          </footer>
+        </article>
+      </div>
+    </MDXProvider>
   );
 }
