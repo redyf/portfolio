@@ -29,7 +29,7 @@ const ProjectsPage = () => {
           name: repo.name,
           description: repo.description,
           stars: repo.stars,
-          languages: repo.languages || [],
+          languages: repo.languages || [], // This needs to be populated from a separate API call
         }));
 
         setRepositories(transformedRepos);
