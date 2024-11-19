@@ -11,14 +11,14 @@ const AboutPage = () => {
           </header>
           <main>
             <p className="mb-6">
-              Computer Science student at Unijorge University, driven by a
-              passion for open-source. I find joy in collaborative coding and
+              Computer Science student at Unijorge University & Software
+              Engineering Intern, I find joy in collaborative coding and
               building community. Beyond the keyboard, music is my solace.
             </p>
             <p className="mb-6">
               When I&apos;m not coding or listening to music, you might find me
               playing table tennis or trying to convince people to switch to
-              Linux...
+              Linux... 🐧
             </p>
             <div className="mb-6">
               View My{" "}
@@ -38,14 +38,23 @@ const AboutPage = () => {
                 aria-label="LinkedIn"
               >
                 LinkedIn
-              </Link>{" "}
-              or drop me an email{" "}
+              </Link>
+              {" and "}
+              <Link
+                href="https://github.com/redyf"
+                className="text-blue-500"
+                aria-label="LinkedIn"
+              >
+                GitHub
+              </Link>
+              {", "}
+              or drop me an{" "}
               <Link
                 href="mailto:mateusalvespereira7@gmail.com"
                 className="text-blue-500"
                 aria-label="Email"
               >
-                here
+                email
               </Link>
               .
             </p>

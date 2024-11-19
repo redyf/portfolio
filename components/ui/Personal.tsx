@@ -16,34 +16,34 @@ const Personal = () => {
           Mateus Alves
         </h1>
         <h2 className="text-white opacity-60 text-center mb-4">
-          Student & Software Developer
+          Software Engineering Intern
         </h2>
         <p className="text-white text-center mb-6">
-          I&apos;m Mateus Alves, a Brazilian student passionate about open
-          source and solving problems with code.
+          A Brazilian Computer Science student drawn to open source development
+          and the art of turning difficult problems into elegant solutions.
         </p>
-        <div className="text-white opacity-60 text-center mb-6">
+        <nav className="text-white opacity-60 text-center mb-6 flex justify-center gap-4">
           <HoverCard>
             <Link href="/projects" onClick={() => playSound(typingSound)}>
               <HoverCardTrigger asChild>
                 <span className="cursor-pointer underline">Projects</span>
               </HoverCardTrigger>
             </Link>
-            <HoverCardContent>
-              Here are my projects, feel free to contribute!
+            <HoverCardContent className="bg-slate-800 text-white border-none">
+              Check out my projects and feel free to contribute!
             </HoverCardContent>
           </HoverCard>
           <HoverCard>
             <Link href="/about" onClick={() => playSound(typingSound)}>
               <HoverCardTrigger asChild>
-                <span className="cursor-pointer underline ml-4">About Me</span>
+                <span className="cursor-pointer underline">About Me</span>
               </HoverCardTrigger>
             </Link>
-            <HoverCardContent>
-              Here&apos;s a little bit about me, my journey and my goals...
+            <HoverCardContent className="bg-slate-800 text-white border-none">
+              Learn more about my journey and goals
             </HoverCardContent>
           </HoverCard>
-        </div>
+        </nav>
       </div>
     </div>
   );
