@@ -24,25 +24,21 @@ const Personal = () => {
         </p>
         <div className="text-white opacity-60 text-center mb-6">
           <HoverCard>
-            <HoverCardTrigger>
-              <span className="cursor-pointer underline">
-                <Link href="/projects" onClick={() => playSound(typingSound)}>
-                  My Projects
-                </Link>
-              </span>
-            </HoverCardTrigger>
+            <Link href="/projects" onClick={() => playSound(typingSound)}>
+              <HoverCardTrigger asChild>
+                <span className="cursor-pointer underline">Projects</span>
+              </HoverCardTrigger>
+            </Link>
             <HoverCardContent>
               Here are my projects, feel free to contribute!
             </HoverCardContent>
           </HoverCard>
           <HoverCard>
-            <HoverCardTrigger>
-              <span className="cursor-pointer underline ml-4">
-                <Link href="/about" onClick={() => playSound(typingSound)}>
-                  About Me
-                </Link>
-              </span>
-            </HoverCardTrigger>
+            <Link href="/about" onClick={() => playSound(typingSound)}>
+              <HoverCardTrigger asChild>
+                <span className="cursor-pointer underline ml-4">About Me</span>
+              </HoverCardTrigger>
+            </Link>
             <HoverCardContent>
               Here&apos;s a little bit about me, my journey and my goals...
             </HoverCardContent>
