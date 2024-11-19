@@ -19,6 +19,10 @@ export async function getPostData(slug: string[]): Promise<PostData> {
 
   const mdxSource = await serialize(post.body.raw); // Use raw for serialization
 
+  if (!post.tags) {
+    throw new Error("Tags are missing for this post");
+  }
+
   return {
     title: post.title,
     publishedDate: post.publishedDate,
