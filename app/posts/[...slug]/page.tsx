@@ -1,11 +1,13 @@
 "use client";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+
 import { MDXRemote } from "next-mdx-remote";
 import { MDXProvider } from "@mdx-js/react";
 import { getPostData, PostData } from "@/utils/getPostData";
 import { mdxComponents } from "@/mdx-components";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import Image from "next/image";
 
 type Props = {
   params: {
@@ -17,17 +19,43 @@ export default function Page({ params }: Props) {
   const [post, setPost] = useState<PostData | null>(null);
 
   useEffect(() => {
-    getPostData(params.slug)
-      .then(setPost)
-      .catch(() => notFound());
+    const fetchData = async () => {
+      try {
+        const postData = await getPostData(params.slug);
+        setPost(postData);
+      } catch (error) {
+        notFound();
+      }
+    };
+
+    fetchData();
   }, [params.slug]);
 
   if (!post) {
     return <div>Loading...</div>;
   }
 
+  const fixedComponents = {
+    ...mdxComponents,
+    img: ({
+      src = "",
+      alt = "Image",
+      width,
+      height,
+      ...props
+    }: JSX.IntrinsicElements["img"]) => (
+      <Image
+        src={src}
+        alt={alt}
+        width={typeof width === "string" ? parseInt(width) : width || 800}
+        height={typeof height === "string" ? parseInt(height) : height || 600}
+        {...props}
+      />
+    ),
+  };
+
   return (
-    <MDXProvider components={mdxComponents}>
+    <MDXProvider components={fixedComponents}>
       <div className="bg-black min-h-screen py-10">
         <article className="mx-auto max-w-3xl bg-white shadow-lg rounded-lg p-6 text-black">
           <header className="mb-6">
